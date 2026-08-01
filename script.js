@@ -1,26 +1,65 @@
-
-// Smooth scroll for menu links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e){
         e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute('href'));
-
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior:"smooth"
+        });
     });
 });
 
-// Navbar shadow on scroll
-window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
+// Navbar Shadow
+window.addEventListener("scroll",function(){
+    const navbar=document.querySelector(".navbar");
 
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = "0 4px 15px rgba(0,0,0,0.4)";
-    } else {
-        navbar.style.boxShadow = "none";
+    if(window.scrollY>50){
+        navbar.style.boxShadow="0 5px 20px rgba(255,215,0,.4)";
+    }else{
+        navbar.style.boxShadow="0 2px 10px rgba(255,215,0,.2)";
     }
+});
+
+// WhatsApp Form
+const form=document.querySelector(".contact-form");
+
+if(form){
+form.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let name=this.querySelector('input[type="text"]').value;
+let phone=this.querySelector('input[type="tel"]').value;
+let email=this.querySelector('input[type="email"]').value;
+let message=this.querySelector("textarea").value;
+
+let text=
+`🏠 *Harsh Properties Enquiry*%0A
+👤 Name: ${name}%0A
+📞 Phone: ${phone}%0A
+📧 Email: ${email}%0A
+📝 Message: ${message}`;
+
+window.open(
+`https://wa.me/919711354661?text=${text}`,
+"_blank"
+);
+
+});
+}
+
+// Fade Animation
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+}
+});
+});
+
+document.querySelectorAll(".card,.section").forEach(el=>{
+el.style.opacity="0";
+el.style.transform="translateY(40px)";
+el.style.transition=".6s";
+observer.observe(el);
 });
