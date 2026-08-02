@@ -20,31 +20,12 @@ window.addEventListener("scroll",function(){
 });
 
 // WhatsApp Form
-const form=document.querySelector(".contact-form");
+const form = document.querySelector(".contact-form");
 
-if(form){
-form.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-let name=this.querySelector('input[type="text"]').value;
-let phone=this.querySelector('input[type="tel"]').value;
-let email=this.querySelector('input[type="email"]').value;
-let message=this.querySelector("textarea").value;
-
-let text=
-`🏠 *Harsh Properties Enquiry*%0A
-👤 Name: ${name}%0A
-📞 Phone: ${phone}%0A
-📧 Email: ${email}%0A
-📝 Message: ${message}`;
-
-window.open(
-`https://wa.me/919711354661?text=${text}`,
-"_blank"
-);
-
-});
+if (form) {
+    form.addEventListener("submit", function () {
+        alert("Your enquiry has been sent successfully.");
+    });
 }
 
 // Fade Animation
