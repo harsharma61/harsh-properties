@@ -1,99 +1,208 @@
+/* ==========================
+   HARSH PROPERTIES
+   STYLE.CSS - PART 1
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0d0d0d;
+    color:#fff;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* NAVBAR */
 
 .navbar{
-flex-direction:column;
-padding:15px;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+    z-index:999;
+    transition:.3s;
+}
+
+.logo{
+    color:#FFD700;
+    font-size:28px;
+    font-weight:bold;
 }
 
 .menu{
-flex-wrap:wrap;
-justify-content:center;
-margin-top:10px;
-gap:15px;
+    list-style:none;
+    display:flex;
+    gap:25px;
 }
 
-.hero h1{
-font-size:38px;
+.menu li a{
+    color:#fff;
+    font-size:16px;
+    transition:.3s;
 }
 
-.hero p{
-font-size:18px;
+.menu li a:hover{
+    color:#FFD700;
 }
 
-.hero-logo{
-width:130px;
-}
+/* HERO */
 
-.section{
-padding:60px 20px;
-}
-
-.section h2{
-font-size:30px;
-}
-
-}
 .hero{
-    position: relative;
-    overflow: hidden;
-    min-height: 100vh;
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
 }
 
 .hero-video-bg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
 }
 
 .hero::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: -1;
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:-1;
 }
 
 .hero-content{
-    position: relative;
-    z-index: 2;
+    max-width:850px;
+    padding:20px;
 }
-/* Scroll Animation */
+
+.hero h1{
+    font-size:70px;
+    color:#FFD700;
+    margin-bottom:15px;
+}
+
+.hero h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+    color:#ddd;
+}
+
+/* BUTTONS */
+
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:15px 35px;
+    border-radius:50px;
+    background:#FFD700;
+    color:#000;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#25D366;
+    color:#fff;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:#fff;
+}
+
+/* SECTIONS */
 
 .section{
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+    padding:90px 8%;
 }
 
-.section.show{
-    opacity: 1;
-    transform: translateY(0);
+.section h2{
+    text-align:center;
+    color:#FFD700;
+    font-size:40px;
+    margin-bottom:20px;
 }
-.floating-whatsapp{
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 60px;
-  height: 60px;
-  background: #25D366;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  text-decoration: none;
-  z-index: 9999;
-}
- /* =========================
-   HARSH PROPERTIES CSS
-   PART 2
-========================= */
 
-/* PROPERTY CARDS */
+.section p{
+    text-align:center;
+    color:#ddd;
+}
+
+/* ==========================
+   STYLE.CSS - PART 2
+========================== */
+
+/* PROPERTY SEARCH */
+
+#location,
+#budget{
+    width:100%;
+    max-width:550px;
+    margin:15px auto;
+    display:block;
+    padding:14px;
+    border:2px solid #FFD700;
+    border-radius:10px;
+    font-size:16px;
+    background:#1a1a1a;
+    color:#fff;
+}
+
+button{
+    width:100%;
+    max-width:550px;
+    display:block;
+    margin:20px auto;
+    padding:15px;
+    background:#FFD700;
+    color:#000;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#25D366;
+    color:#fff;
+}
+
+#result{
+    margin-top:30px;
+}
+
+/* CARDS */
 
 .cards{
     display:grid;
@@ -106,7 +215,7 @@ font-size:30px;
     background:#1b1b1b;
     border:1px solid #333;
     border-radius:12px;
-    overflow:hidden;
+    padding:25px;
     text-align:center;
     transition:.3s;
     box-shadow:0 5px 15px rgba(0,0,0,.3);
@@ -121,15 +230,13 @@ font-size:30px;
     width:100%;
     height:220px;
     object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
 }
 
 .card h3{
     color:#FFD700;
-    margin:15px 0;
-}
-
-.card p{
-    padding:0 15px 20px;
+    margin-bottom:10px;
 }
 
 /* GALLERY */
@@ -157,7 +264,7 @@ font-size:30px;
 /* CONTACT FORM */
 
 .contact-form{
-    max-width:600px;
+    max-width:650px;
     margin:40px auto;
     display:flex;
     flex-direction:column;
@@ -166,29 +273,14 @@ font-size:30px;
 
 .contact-form input,
 .contact-form textarea{
-    width:100%;
     padding:15px;
     border:none;
     border-radius:8px;
-    outline:none;
     font-size:16px;
 }
 
-.contact-form button{
-    padding:15px;
-    background:#FFD700;
-    color:#000;
-    border:none;
-    border-radius:8px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.contact-form button:hover{
-    background:#25D366;
-    color:#fff;
+.contact-form textarea{
+    resize:vertical;
 }
 
 /* FOOTER */
@@ -198,7 +290,6 @@ footer{
     color:#FFD700;
     text-align:center;
     padding:25px;
-    margin-top:50px;
 }
 
 /* FLOATING WHATSAPP */
@@ -226,17 +317,75 @@ footer{
     transform:scale(1.1);
 }
 
+/* ==========================
+   STYLE.CSS - PART 3 (FINAL)
+========================== */
+
 /* SCROLL ANIMATION */
 
-.section{
+.section,
+.card{
     opacity:0;
     transform:translateY(40px);
-    transition:.8s;
+    transition:all .8s ease;
 }
 
-.section.show{
+.section.show,
+.card.show{
     opacity:1;
     transform:translateY(0);
+}
+
+/* HERO ANIMATION */
+
+.hero-content h1{
+    animation:fadeDown 1s ease;
+}
+
+.hero-content h3{
+    animation:fadeUp 1.2s ease;
+}
+
+.hero-content p{
+    animation:fadeUp 1.4s ease;
+}
+
+.btn{
+    animation:fadeUp 1.6s ease;
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* CARD HOVER */
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+/* IMAGE HOVER */
+
+.gallery img:hover{
+    transform:scale(1.05);
 }
 
 /* MOBILE */
@@ -255,16 +404,20 @@ footer{
     margin-top:10px;
 }
 
+.hero{
+    padding:120px 20px 60px;
+}
+
 .hero h1{
-    font-size:36px;
+    font-size:42px;
+}
+
+.hero h3{
+    font-size:22px;
 }
 
 .hero p{
-    font-size:18px;
-}
-
-.hero-logo{
-    width:130px;
+    font-size:17px;
 }
 
 .section{
@@ -287,58 +440,24 @@ footer{
     width:100%;
 }
 
-}
-
-#location{
-width:100%;
-padding:12px;
-font-size:16px;
-margin-bottom:15px;
-border:2px solid #dcdcdc;
-border-radius:8px;
-}
-
-#budget{
-width:100%;
-padding:12px;
-font-size:16px;
-margin-bottom:15px;
-border:2px solid #dcdcdc;
-border-radius:8px;
-}
-
-button{
-width:100%;
-padding:12px;
-font-size:16px;
-background:#0b7a3e;
-color:#fff;
-border:none;
-border-radius:8px;
-cursor:pointer;
-}
-
-button:hover{
-background:#095f31;
-}
-
-#location{
+.btn{
     width:100%;
-    max-width:500px;
-    display:block;
-    margin:15px auto;
+    max-width:300px;
 }
 
-#budget{
-    width:100%;
-    max-width:500px;
-    display:block;
-    margin:15px auto;
 }
 
-button{
-    width:100%;
-    max-width:500px;
-    display:block;
-    margin:15px auto;
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#FFD700;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
 }
