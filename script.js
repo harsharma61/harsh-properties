@@ -55,20 +55,31 @@ function searchProperty() {
     }
 
     result.innerHTML = `
-        <div style="background:#fff;padding:15px;border-radius:10px;margin-top:20px;box-shadow:0 0 10px rgba(0,0,0,.2)">
-            <h3>${location}</h3>
-            <p><b>Budget:</b> ${budget}</p>
-            <p>✅ Property Available</p>
+<div style="background:#fff;padding:15px;border-radius:12px;margin-top:20px;box-shadow:0 5px 15px rgba(0,0,0,.2);">
 
-            <a href="https://wa.me/919711354661?text=${encodeURIComponent(
-                "Hi Harsh Properties, I am interested in a property at " +
-                location +
-                " with budget " +
-                budget
-            )}" target="_blank">
-                <button>Contact on WhatsApp</button>
-            </a>
-        </div>
-    `;
-}
-    
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800"
+         style="width:100%;height:200px;object-fit:cover;border-radius:10px;">
+
+    <h2>${location}</h2>
+
+    <p><b>💰 Budget:</b> ${budget}</p>
+    <p>🏠 2 BHK Builder Floor</p>
+    <p>📐 850 Sq.ft.</p>
+    <p>✅ Ready to Move</p>
+    <p>📍 Prime Location</p>
+
+    <a href="https://wa.me/919711354661?text=${encodeURIComponent(
+        "Hi Harsh Properties, I am interested in a property at " +
+        location +
+        " with budget " +
+        budget
+    )}" target="_blank">
+
+        <button style="width:100%;padding:14px;background:#25D366;color:#fff;border:none;border-radius:8px;font-size:18px;font-weight:bold;">
+            Contact on WhatsApp
+        </button>
+
+    </a>
+
+</div>
+`;
