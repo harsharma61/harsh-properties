@@ -65,10 +65,9 @@ alert("✅ Thank you! Your enquiry has been sent successfully.");
 });
 
 }
-
-// ================================
+// ===============================
 // HARSH PROPERTIES SCRIPT - PART 2
-// ================================
+// ===============================
 
 function searchProperty(){
 
@@ -77,21 +76,74 @@ function searchProperty(){
     const result = document.getElementById("result");
 
     if(location==="" || budget==="Select Budget"){
-
         alert("Please select Location and Budget");
-
         return;
     }
 
-    result.innerHTML=`
+    result.innerHTML = `
+    <div style="
+        max-width:650px;
+        margin:25px auto;
+        background:#ffffff;
+        border-radius:15px;
+        overflow:hidden;
+        box-shadow:0 10px 25px rgba(0,0,0,.25);
+    ">
 
-<div style="
-max-width:650px;
-margin:25px auto;
-background:#fff;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.25);">
+        <img
+        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900"
+        style="
+        width:100%;
+        height:230px;
+        object-fit:cover;
+        ">
 
-<img
-src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=
+        <div style="padding:20px;color:#111;">
+
+            <h2 style="margin-bottom:10px;">
+                📍 ${location}
+            </h2>
+
+            <p><b>💰 Budget:</b> ${budget}</p>
+
+            <p>🏠 2 BHK Builder Floor</p>
+
+            <p>📐 850 Sq.ft.</p>
+
+            <p>✅ Ready To Move</p>
+
+            <p>⭐ Prime Location</p>
+
+            <a
+            href="https://wa.me/919711354661?text=${encodeURIComponent(
+            "Hi Harsh Properties, I am interested in a property at " +
+            location +
+            " with budget " +
+            budget
+            )}"
+            target="_blank">
+
+            <button style="
+            width:100%;
+            margin-top:15px;
+            padding:15px;
+            background:#25D366;
+            color:#fff;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            ">
+            Contact on WhatsApp
+            </button>
+
+            </a>
+
+        </div>
+
+    </div>
+    `;
+
+}
+
