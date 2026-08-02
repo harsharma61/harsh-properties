@@ -44,3 +44,22 @@ el.style.transform="translateY(40px)";
 el.style.transition=".6s";
 observer.observe(el);
 });
+
+function searchProperty() {
+    let location = document.getElementById("location").value;
+    let budget = document.getElementById("budget").value;
+
+    if (location === "" || budget === "Select Budget") {
+        alert("Please select Location and Budget");
+        return;
+    }
+
+    window.location.href =
+    "https://wa.me/919711354661?text=" +
+    encodeURIComponent(
+        "Hi Harsh Properties,\n\n" +
+        "I am looking for a property.\n" +
+        "Location: " + location + "\n" +
+        "Budget: " + budget
+    );
+}
