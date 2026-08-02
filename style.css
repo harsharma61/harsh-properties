@@ -325,15 +325,9 @@ footer{
 
 .section,
 .card{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all .8s ease;
-}
-
-.section.show,
-.card.show{
     opacity:1;
-    transform:translateY(0);
+    transform:none;
+    transition:all .8s ease;
 }
 
 /* HERO ANIMATION */
