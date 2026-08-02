@@ -321,13 +321,19 @@ footer{
    STYLE.CSS - PART 3 (FINAL)
 ========================== */
 
-/* SCROLL ANIMATION */
+/* Scroll Animation */
 
 .section,
 .card{
-    opacity:1;
-    transform:none;
+    opacity:0;
+    transform:translateY(40px);
     transition:all .8s ease;
+}
+
+.section.show,
+.card.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* HERO ANIMATION */
