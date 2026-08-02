@@ -275,3 +275,15 @@ font-size:30px;
     position: relative;
     z-index: 2;
 }
+/* Scroll Animation */
+
+.section{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.section.show{
+    opacity: 1;
+    transform: translateY(0);
+}
