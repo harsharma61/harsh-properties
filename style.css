@@ -321,3 +321,24 @@ cursor:pointer;
 button:hover{
 background:#095f31;
 }
+
+#location{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:15px auto;
+}
+
+#budget{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:15px auto;
+}
+
+button{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:15px auto;
+}
