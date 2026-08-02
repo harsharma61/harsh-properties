@@ -288,3 +288,36 @@ footer{
 }
 
 }
+
+#location{
+width:100%;
+padding:12px;
+font-size:16px;
+margin-bottom:15px;
+border:2px solid #dcdcdc;
+border-radius:8px;
+}
+
+#budget{
+width:100%;
+padding:12px;
+font-size:16px;
+margin-bottom:15px;
+border:2px solid #dcdcdc;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:12px;
+font-size:16px;
+background:#0b7a3e;
+color:#fff;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#095f31;
+}
