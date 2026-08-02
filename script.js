@@ -44,22 +44,32 @@ el.style.transform="translateY(40px)";
 el.style.transition=".6s";
 observer.observe(el);
 });
-
 function searchProperty() {
     let location = document.getElementById("location").value;
     let budget = document.getElementById("budget").value;
+    let result = document.getElementById("result");
 
     if (location === "" || budget === "Select Budget") {
         alert("Please select Location and Budget");
         return;
     }
 
-    window.location.href =
-    "https://wa.me/919711354661?text=" +
-    encodeURIComponent(
-        "Hi Harsh Properties,\n\n" +
-        "I am looking for a property.\n" +
-        "Location: " + location + "\n" +
-        "Budget: " + budget
-    );
+    result.innerHTML = `
+        <div style="background:#fff;padding:15px;border-radius:10px;margin-top:20px;box-shadow:0 0 10px rgba(0,0,0,.2)">
+            <h3>${location}</h3>
+            <p><b>Budget:</b> ${budget}</p>
+            <p>✅ Property Available</p>
+
+            <a href="https://wa.me/919711354661?text=${encodeURIComponent(
+                "Hi Harsh Properties, I am interested in a property at " +
+                location +
+                " with budget " +
+                budget
+            )}" target="_blank">
+                <button>Contact on WhatsApp</button>
+            </a>
+        </div>
+    `;
 }
+
+    
